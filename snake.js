@@ -2,8 +2,9 @@
 //0 is white
 //1 is black
 //2 is red
+import {Queue} from '@datastructures-js/queue';
 
-class Snake{
+export class Snake{
 
 	constructor(pos, n){
 		this.snakeQ = new Queue();

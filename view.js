@@ -1,4 +1,4 @@
-class View{
+export class View{
    #colourCode = {
   	0:"#FFFFFF",
   	1:"#000000",

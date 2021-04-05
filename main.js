@@ -1,3 +1,8 @@
+import {Snake} from "./snake.js";
+import {View} from "./view.js";
+import {Map} from "./map.js";
+
+
 const n = 500;
 const pos = {x:3, y:3};
 const v = new View(n);

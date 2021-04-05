@@ -1,0 +1,29 @@
+{
+  "name": "snakegame",
+  "version": "1.0.0",
+  "description": "A Simple snake game designed with efficiency in mind",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/RaeWinTan/snake-js.git"
+  },
+  "keywords": [
+    "snakegame",
+    "snake",
+    "game",
+    "food",
+    "playsnake"
+  ],
+  "author": "Tan Rae-Win",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/RaeWinTan/snake-js/issues"
+  },
+  "homepage": "https://github.com/RaeWinTan/snake-js#readme",
+  "dependencies": {
+    "@datastructures-js/queue": "^4.0.0"
+  }
+}

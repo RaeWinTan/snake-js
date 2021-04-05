@@ -1,4 +1,4 @@
-class Map{
+export class Map{
 	#stopped;
 	constructor(n, s, v){
 		this.v = v;
