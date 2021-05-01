@@ -1,5 +1,5 @@
 {
-  "name": "snakegame",
+  "name": "snakegame-js",
   "version": "1.0.0",
   "description": "A Simple snake game designed with efficiency in mind",
   "main": "index.js",
