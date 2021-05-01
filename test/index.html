@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Snake Test</title>
+  <style>
+   .main{
+  position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+   border: 1px solid blue;
+   }
+
+   .dead{
+     height: 100px;
+     width:100px;
+   }
+   .center {
+     text-align: center;
+     margin: 0;
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     -ms-transform: translate(-50%, -50%);
+     transform: translate(-50%, -50%);
+   }
+   .notShow{
+     display:none;
+   }
+   .Show{
+     display:block;
+   }
+
+  </style>
+
+</head>
+<body>
+  <canvas  id="snakeGameId" class="main notShow"></canvas>
+  <div id="deadId" class="main dead Show">
+    <div class="center">
+      <p>DEAD</p>
+      <button id = "startBtn">PLAY AGAIN</button>
+    </div>
+  </div>
+
+  <script src="output.js"></script>
+</body>
+
+</html>

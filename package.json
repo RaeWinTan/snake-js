@@ -2,9 +2,10 @@
   "name": "snakegame",
   "version": "1.0.0",
   "description": "A Simple snake game designed with efficiency in mind",
-  "main": "main.js",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "npm run build && cd test && npm run build",
+    "build": "npx babel src -d dist"
   },
   "repository": {
     "type": "git",
@@ -25,5 +26,10 @@
   "homepage": "https://github.com/RaeWinTan/snake-js#readme",
   "dependencies": {
     "@datastructures-js/queue": "^4.0.0"
+  },
+  "devDependencies": {
+    "@babel/plugin-proposal-class-properties": "^7.13.0",
+    "@babel/preset-env": "^7.13.15",
+    "@babel/core": "^7.13.15"
   }
 }

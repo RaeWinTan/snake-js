@@ -1,5 +1,5 @@
 export class Map{
-	#stopped;
+	stopped;
 	constructor(n, s, v){
 		this.v = v;
 		this.eaten = false;
@@ -19,7 +19,7 @@ export class Map{
 		}
 		this.s = s;
 		this.n = n;
-		this.#stopped = 0;
+		this.stopped = 0;
 		this.allPos = this.allPos.sort(() => Math.random() - 0.5);
 		this.generateFood();
 	}
@@ -27,17 +27,17 @@ export class Map{
 	setFDiff(a, b){
 		if(a.length === b.size) return -1;
 		while(true){
-				if(!b.has(a[this.#stopped++])) return a[this.#stopped - 1];
-				if(this.#stopped>=a.length) this.#stopped = 0;
+				if(!b.has(a[this.stopped++])) return a[this.stopped - 1];
+				if(this.stopped>=a.length) this.stopped = 0;
 		}
 	}
 	//can be faster...
 	generateFood(){
 		const num = this.setFDiff(this.allPos, this.s.getSnakePos());
-		if(num === -1) return;
+		if(num === -1) throw "Position out of range";
 		const coor = this.s.convertNum(num);
 		this.map[coor[0]][coor[1]] = 2;
-		v.changeColour({x:coor[0], y:coor[1]}, 2);
+		this.v.changeColour({x:coor[0], y:coor[1]}, 2);
 	}
 
 	drawSnake(delPos){
@@ -70,20 +70,20 @@ export class Map{
 	}
 
 	down(){
-		if(s.headCoor.x + 1 >= this.n) s.headCoor.x = 0;
-		else ++s.headCoor.x;
+		if(this.s.headCoor.x + 1 >= this.n) this.s.headCoor.x = 0;
+		else ++this.s.headCoor.x;
 		this.moveCleanUp();
 	}
 
 	right(){
-		if (s.headCoor.y + 1 >= this.n)s.headCoor.y = 0;
-		else ++s.headCoor.y;
+		if (this.s.headCoor.y + 1 >= this.n)this.s.headCoor.y = 0;
+		else ++this.s.headCoor.y;
 		this.moveCleanUp();
 	}
 
 	left(){
-		if (s.headCoor.y - 1 < 0) s.headCoor.y = this.n - 1;
-		else --s.headCoor.y;
+		if (this.s.headCoor.y - 1 < 0) this.s.headCoor.y = this.n - 1;
+		else --this.s.headCoor.y;
 		this.moveCleanUp();
 	}
 }

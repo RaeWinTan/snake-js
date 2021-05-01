@@ -3,6 +3,8 @@
 //1 is black
 //2 is red
 import {Queue} from '@datastructures-js/queue';
+//require('@datastructures-js/queue');
+
 
 export class Snake{
 
@@ -37,13 +39,9 @@ export class Snake{
 		//size also
 		var rvalue = this.snakeQ.dequeue();
 		this.snakePos.delete(rvalue);
-		if(this.snakePos.has(this.convertPos(pos))){
-			alert("DIED");
-			throw "DIED";
-		}
+		if(this.snakePos.has(this.convertPos(pos))) throw new Error("DIED");
 		this.snakeQ.enqueue(this.convertPos(pos));
 		this.snakePos.add(this.convertPos(pos));
-
 		return rvalue;
 	}
 
